@@ -1,0 +1,29 @@
+@use 'variables';
+@use 'mixins';
+
+.container {
+    margin: variables.$mg-block-min auto; padding: 1rem;
+    background: variables.$black;
+    border-radius: 1rem;
+    width: 90dvw;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(51, 136, 255, 0.8);
+    transition: transform 0.3s ease;
+    &:hover { transition: transform 0.3s ease; transform: scale(1.02);}}
+.title { @include mixins.paste(mixins.$main-title);text-shadow: 0 0 15px variables.$blue-75;}
+.subtitle {@include mixins.paste(mixins.$title);}
+.text {
+    font-size: 1.7rem; font-weight: 600;
+    @include mixins.paste(mixins.$text); 
+    max-width: 80%; margin: auto;}
+a {font-size: 1.4rem; font-weight: 700;}
+.benefits 
+{
+    @include mixins.paste(mixins.$center);
+    flex-direction: column;
+    li {
+    width: 100%; max-width: 900px;
+    padding: .5rem; font-size: 1.5rem;
+    margin-bottom: 1rem; border-radius: 1rem;
+    background-color: variables.$blue-75;
+}}

@@ -1,0 +1,45 @@
+@use 'variables';
+@use 'mixins';
+
+.title { @include mixins.paste(mixins.$main-title);padding: variables.$mg-el  0;}
+.container { @include mixins.paste(mixins.$center); 
+    margin-bottom: variables.$mg-block-min;}
+.filter {
+    width: 100%; 
+    @include mixins.paste(mixins.$center);
+    gap: 1rem; 
+    margin-bottom: variables.$mg-el;
+    color: variables.$blue;
+    &_search {
+        width: 100%; max-width: 600px;
+        border-bottom: 2px solid variables.$blue;
+        background-color: transparent; 
+        font-size: 2rem; padding: 1rem; font-weight: 500;
+        &:focus {border-bottom-color: variables.$white;}}
+    &_category {
+        border: 1px solid variables.$blue; 
+        background-color: transparent;
+        color: variables.$blue; 
+        font-size: 1.7rem;
+        padding: 1rem; font-weight: 500;
+        option { font-size: 1.7rem; background-color: rgb(28, 28, 28);}
+        &:focus {border-color: variables.$blue-75}
+    }
+}
+.card {
+    width: 40%;height: 420px;
+    margin: variables.$mg-el;
+    @include mixins.paste(mixins.$flex-items);
+    background-color: variables.$black;
+    border-radius: 1rem; box-shadow: 0 5px 20px variables.$blue-75;
+    transition: all 0.3s ease; 
+    &:hover {
+        transform: translateY(-5px);box-shadow: 0 10px 30px variables.$blue-75; }
+    &_title {font-size: 2rem;color: variables.$blue;}
+    &_icon {width: 180px;}
+    &_link {
+        width: 100%; font-size: 2.2rem;
+        @include mixins.paste(mixins.$link);
+        &:hover {@include mixins.paste(mixins.$link-hover);}
+     }
+}

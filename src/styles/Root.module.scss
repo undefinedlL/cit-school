@@ -1,0 +1,112 @@
+@use 'variables';
+@use 'mixins';
+.hero {
+    margin: auto;
+    @include mixins.paste(mixins.$center);
+    width: 100%; height: 95dvh;
+    &_title {
+        @include mixins.paste(mixins.$main-title);
+        color: variables.$white;
+    }
+    &_content {
+        width: 80%;
+        background-color: variables.$blue-75;
+        box-shadow: 0 0 10px 20px variables.$blue-75;
+        border-radius: 1rem;
+        &_subtitle {
+            @include mixins.paste(mixins.$subtitle);
+        }
+    }
+}
+
+.benefits {
+    width: 100%; text-align: center;
+    padding-bottom: variables.$mg-el;
+    &_title {@include mixins.paste(mixins.$main-title); 
+    color: #fff;}
+    &_content {@include mixins.paste(mixins.$around-wrap);margin: variables.$mg-block-min;}
+    &_item {
+        width: 400px;
+        height: 380px;
+        background-color: variables.$blue-75;
+        border-radius: 1rem;
+        box-shadow: 0 0 20px 9px variables.$blue-75;
+        @include mixins.paste(mixins.$flex-items);
+        transition: all .3s ease-in;
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 10px 3px variables.$blue-75;
+            .benefits_item_icon {animation: icon-anim .7s;}
+        }
+        &_icon {
+            width: 150px; height: 150px;
+            transition: all .3s ease-in-out;
+        }
+        &_title {font-size: 1.8rem;}
+        &_description {font-size: 1.3rem;}
+    }
+}
+@keyframes icon-anim {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(5deg); }
+    20% { transform: rotate(-5deg); }
+    30% { transform: rotate(3deg); }
+    40% { transform: rotate(-3deg); }
+    50% { transform: rotate(1deg); }
+    60% { transform: rotate(-1deg); }
+    70% { transform: rotate(0deg); }
+    80% { transform: rotate(1deg); }
+    90% { transform: rotate(-1deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.courses {
+    width: 96%;
+    margin: variables.$mg-block-min auto; padding-bottom: variables.$pd-block;
+    background-color: variables.$white-bg;
+    box-shadow: 0 0 10px 20px variables.$white-bg;
+    border-radius: 1rem; color: variables.$blue; text-align: center;
+    &_title {@include mixins.paste(mixins.$main-title); margin: variables.$mg-block-min;}
+    &_content {@include mixins.paste(mixins.$around-wrap); margin-bottom: variables.$mg-el;}
+    &_item {
+        @include mixins.paste(mixins.$flex-items);
+        max-width: 370px; height: 450px;
+        box-shadow: 0 10px 15px 5px variables.$blue-75;
+        border-radius: 1rem; transition: all .3s ease;
+        &_title {font-size: 1.9rem; color: variables.$blue;}
+        &_link {@include mixins.paste(mixins.$link);font-size: 1.9rem;
+            &:hover {@include mixins.paste(mixins.$link-hover);}}
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 2px 3px 1px variables.$blue-75;
+            transition: all .2s ease;}}
+    &_link {
+        @include mixins.paste(mixins.$anim-link);
+        font-size: 2.5rem; font-weight: 800;
+        &:before {@include mixins.paste(mixins.$anim-link-before);}
+        &:hover:before {@include mixins.paste(mixins.$anim-link-hover);}}
+}
+
+.cta {
+    @include mixins.paste(mixins.$center);
+    flex-direction: column;
+    gap: variables.$mg-el;
+    padding: variables.$mg-block-max auto;
+    margin: variables.$mg-block-max auto;
+    hr { 
+        width: 100%; 
+        border: 1px solid variables.$blue;
+    }
+    &_title {
+        @include mixins.paste(mixins.$main-title);
+        max-width: 75dvw;
+        color: #fff;
+    }
+    &_link {
+        @include mixins.paste(mixins.$link);
+        font-size: 3.5rem;
+        &:hover {
+            @include mixins.paste(mixins.$link-hover);
+        }
+    }
+}

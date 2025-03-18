@@ -1,0 +1,21 @@
+@use 'variables';
+@use 'mixins';
+
+.not_found {
+    @include  mixins.paste(mixins.$center);
+    flex-direction: column;
+    height: 100vh;
+    &_title {
+        @include mixins.paste(mixins.$main-title);
+    }
+    &_text {
+        @include mixins.paste(mixins.$text);
+    }
+    &_button {
+        font-size: 2rem;
+        @include mixins.paste(mixins.$link);
+        &:hover {
+            @include mixins.paste(mixins.$link-hover);
+        }
+    }
+}

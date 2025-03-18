@@ -1,0 +1,89 @@
+@use 'variables';
+
+$center: (
+    display: flex,
+    justify-content: center,
+    align-items: center,
+    text-align: center,
+    flex-wrap: wrap
+);
+
+$flex-items: (
+    display: flex,
+    flex-direction: column,
+    align-items: center,
+    justify-content: space-between,
+    padding: 1.3rem
+);
+
+$around-wrap: (
+    display: flex,
+    justify-content: space-around,
+    flex-wrap: wrap,
+    gap: 2rem
+);
+
+$main-title: (
+    font-size: 4.5rem,
+    color: variables.$blue,
+    font-family: variables.$font,
+    font-weight: 600,
+    text-align: center
+);
+$title: (
+    color: variables.$blue,
+    font-size: 2.5rem
+);
+$subtitle: (
+    font-size: 2.5rem,
+    font-weight: 400
+);
+$text: (
+    font-size: 1.8rem,
+    font-weight: 400,
+    padding-bottom: 2rem
+);
+
+$link: (
+    display: inline-block,
+    padding: 10px 20px,
+    background-color: variables.$blue, 
+    color: white,
+    font-family: variables.$font,
+    font-weight: 600,
+    border-radius: 1rem,
+    transition: background-color 0.3s ease
+);
+$link-hover: (
+    background-color: #0056b3,
+    transition: all 0.3s ease
+);
+
+$anim-link: (
+    display: inline-block,
+    color: variables.$blue,
+    position: relative,
+);
+$anim-link-hover: (
+    width: 100%,
+    left: 0,
+    transition: all .2s ease-out
+);
+$anim-link-before: (
+    content: '',
+    position: absolute,
+    bottom: -7px,
+    right: 0,
+    display: block,
+    width: 0,
+    height: 6px,
+    background: variables.$blue,
+    transition: all .2s ease-out
+);
+
+
+@mixin paste($styles) {
+    @each $property, $value in $styles {
+        #{$property}: $value; 
+    }
+}

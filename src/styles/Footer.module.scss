@@ -1,0 +1,29 @@
+@use 'variables';
+@use 'mixins';
+
+.footer {
+    background-color: variables.$black;  
+    width: 100%; padding: 2rem 0;
+    &_content {
+      @include mixins.paste(mixins.$around-wrap);
+      align-items: center;}
+    &_nav {
+      @include mixins.paste(mixins.$center);
+      text-align: right; gap: 1.4rem;}
+    &_quick_links {
+      h3 {font-size: 1.2rem; color: variables.$blue;}
+      a {
+        display: block; font-size: 1.1rem;
+        transition: color 0.3s ease;
+        &:hover {color: variables.$blue;}}}
+    &_socials{
+      a {
+        margin-left: 1rem;
+        svg {
+          width: 30px; height: 30px;
+          &:hover {fill: variables.$blue;}}}}
+    &_copyrights {text-align: center;}
+    hr {
+      border-top: 1px solid variables.$white-50; 
+      margin: 1rem auto;}
+}
