@@ -1,7 +1,7 @@
 {
   "name": "d_project",
   "version": "0.0.0",
-  "homepage": "https://undefinedlL.github.io/cit-school",
+  "homepage": "https://undefinedlL.github.io/cit-school/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
