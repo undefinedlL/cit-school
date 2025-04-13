@@ -10,9 +10,9 @@ const Header: FC = () => {
         <Logo />
       </Link>
       <nav className={s.nav}>
-        <Link className={s.nav_link} to="/courses">курсы</Link>
-        <Link className={s.nav_link} to="/about">о нас</Link>
-        <Link className={s.nav_link} to="/contacts">контакты</Link>
+        <Link className={s.nav_link} to="courses">курсы</Link>
+        <Link className={s.nav_link} to="about">о нас</Link>
+        <Link className={s.nav_link} to="contacts">контакты</Link>
       </nav>
 
     </header>
