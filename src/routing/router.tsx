@@ -12,7 +12,11 @@ const router = createBrowserRouter([
             errorElement: <NotFoundPage/>
         })),
         errorElement: <NotFoundPage/>
-    }
-]);
+    },
+    
+], 
+{
+    basename: process.env.PUBLIC_URL
+});
 
 export default router;
