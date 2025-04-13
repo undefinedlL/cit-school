@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import s from '../styles/NotFound.module.scss';
 import setTitle from '../utils/setTitle';
 
@@ -13,9 +14,9 @@ const NotFoundPage = () => {
                    выше или перейти на главную страницу, чтобы найти интересующую 
                    вас информацию.
             </p>
-            <a href='/' className={s.not_found_button}>
+            <Link to='/' className={s.not_found_button}>
                 Вернуться на главную
-            </a>
+            </Link>
         </div>
     );
 };

@@ -1,17 +1,18 @@
 import Logo from './Logo';
 import s from '../../styles/Header.module.scss';
 import { FC } from "react";
+import { Link } from 'react-router';
 
 const Header: FC = () => {
   return (
     <header className={s.header}>
-      <a href="/">
+      <Link to="/">
         <Logo />
-      </a>
+      </Link>
       <nav className={s.nav}>
-        <a className={s.nav_link} href="/courses">курсы</a>
-        <a className={s.nav_link} href="/about">о нас</a>
-        <a className={s.nav_link} href="/contacts">контакты</a>
+        <Link className={s.nav_link} to="/courses">курсы</Link>
+        <Link className={s.nav_link} to="/about">о нас</Link>
+        <Link className={s.nav_link} to="/contacts">контакты</Link>
       </nav>
 
     </header>

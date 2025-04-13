@@ -4,6 +4,7 @@ import s from '../styles/Root.module.scss';
 import { PiBooksLight, PiCertificateLight } from "react-icons/pi";
 import { MdOutlineSchool } from "react-icons/md";
 import courses from "../utils/courses";
+import { Link } from "react-router";
 
 const RootPage: FC  = () => {
   const items = [courses[0], courses[1], courses[2]];
@@ -56,11 +57,11 @@ const RootPage: FC  = () => {
             <div className={s.courses_item} key={course.id}>
             <h3 className={s.courses_item_title}>{course.title}</h3>
             <img src={course.icon} alt={course.title} />
-            <a href={`/courses/${course.id}`} className={s.courses_item_link}>перейти к курсу</a>
+            <Link to={`/courses/${course.id}`} className={s.courses_item_link}>перейти к курсу</Link>
           </div>
           ))}
         </div>
-        <a href="/courses" className={s.courses_link}>Посмотреть все</a>
+        <Link to="/courses" className={s.courses_link}>Посмотреть все</Link>
       </div>
       
       <div className={s.cta}>
@@ -68,7 +69,7 @@ const RootPage: FC  = () => {
         <h1 className={s.cta_title}>
           Запишитесь на курс и начните свой путь к успеху уже сегодня!
         </h1>
-        <a href="/courses" className={s.cta_link}>Записаться на курс</a>
+        <Link to="/courses" className={s.cta_link}>Записаться на курс</Link>
       </div>
     </>
   )
