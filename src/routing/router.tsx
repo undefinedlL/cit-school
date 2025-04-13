@@ -10,13 +10,11 @@ const router = createBrowserRouter([
         children: routes.map((route) => ({
             ...route,
             errorElement: <NotFoundPage/>
-        })),
-        errorElement: <NotFoundPage/>
-    },
-    
-], 
+        }))
+    },],
 {
-    basename: process.env.PUBLIC_URL
-});
+    basename: "/cit-school/"
+}
+);
 
 export default router;
