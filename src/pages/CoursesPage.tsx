@@ -41,11 +41,13 @@ const CoursesPage: FC = () => {
       <div className={s.container}>
         {filteredCourses.length ? (
           filteredCourses.map((course) => (
-            <div key={course.id} className={s.card}>
-              <h2 className={s.card_title}>{course.title}</h2>
-              <img className={s.card_icon} src={course.icon} alt={course.title} />
-              <Link to={`${course.id}`} className={s.card_link}>
-              Перейти к курсу</Link>
+            <div key={course.id} className={s.container_item}>
+              <div key={course.id} className={s.card}>
+                <h2 className={s.card_title}>{course.title}</h2>
+                <img className={s.card_icon} src={course.icon} alt={course.title} />
+                <Link to={`${course.id}`} className={s.card_link}>
+                Перейти к курсу</Link>
+              </div>
             </div>
           ))
         ) : (

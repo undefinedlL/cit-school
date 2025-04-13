@@ -2,8 +2,18 @@
 @use 'mixins';
 
 .title { @include mixins.paste(mixins.$main-title);padding: variables.$mg-el  0;}
-.container { @include mixins.paste(mixins.$center); 
-    margin-bottom: variables.$mg-block-min;}
+.container { 
+    max-width: 2000px;
+    @include mixins.paste(mixins.$center); 
+    justify-content: flex-start;
+    margin: variables.$mg-block-min auto;
+    padding: 2rem;
+    &_item {
+        width: 50%;
+        padding: variables.$mg-el;
+        @include mixins.paste(mixins.$center);
+    }
+}
 .filter {
     width: 100%; 
     @include mixins.paste(mixins.$center);
@@ -27,8 +37,7 @@
     }
 }
 .card {
-    width: 40%;height: 420px;
-    margin: variables.$mg-el;
+    width: 100%;height: 420px;
     @include mixins.paste(mixins.$flex-items);
     background-color: variables.$black;
     border-radius: 1rem; box-shadow: 0 5px 20px variables.$blue-75;
@@ -42,4 +51,26 @@
         @include mixins.paste(mixins.$link);
         &:hover {@include mixins.paste(mixins.$link-hover);}
      }
+}
+.subtitle {
+    @include mixins.paste(mixins.$main-title);
+    margin: auto;
+}
+
+@media (max-width: 300px) {
+    .title {
+
+    }
+    .filter {
+
+    }
+    .container {
+
+    }
+    .card {
+
+    }   
+    .subtitle {
+        
+    }
 }
